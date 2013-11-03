@@ -1,6 +1,6 @@
 <html>
 <head>
-
+	<script src="lib/jquery-1.4.1.js"></script>
 </head>
 
 <body>
@@ -15,13 +15,56 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 -->
 </style>
 
+<script type="text/javascript">
+		$(function() {
+			
+			/* *********************************************************************************** */
+			/* 
+			 * main(): 
+			 */
+			function main() {
+				$("#loginForm").submit( loginForm_submitHandler );
+
+			}
+
+			function loginForm_submitHandler() {
+				var username = $("#username").val();
+				var password = $("#password").val();
+				$.ajax({
+					url:'https://www.pinecovetest.com/com/pinecove/registration/facade/mobile.cfc?method=authenticateUser'
+					,type:'GET'
+					,data:{
+						'userName':username,
+						'password':password,
+						'remoteIP':'10.1.49.72'
+					}
+					,success: function(data) {
+						// bracelet exists and has an associated contact
+						if ( data.id) != 0 ) {
+							$('.reg-login-widget2').html("<h3>Login Success!</h3>");
+						}
+						else {
+							$('.reg-login-widget2').html("<h3>Login Fail!</h3>");
+						}
+					}
+					,error: function() {
+						$('.reg-login-widget2').html("<h3>Function Fail!</h3>");
+					}
+				});
+			}
+
+			main();
+
+		});
+
+</script>
+
 <!-- Reg Login Widget 2 -->
 <div class="sbf2 fancy graphic-title sbf2g-registration reg-login-widget2">
     <div class="sbf2-content">
         <h2 class="sbf-title">Registration</h2>
-        
-        <h3 class="accent2">Current Camper?</h3>
-        <form action="https://www.pinecovetest.com/reg/index.cfm?fa=login.validate_login" class="formstyle1" method="post">              
+    
+        <form class="formstyle1" method="post" id="loginForm">              
         <div class="rlw-inputrow">
           <label for="username">Username:</label>
             <input id="username" name="username" class="text" type="text" size="22" />
@@ -31,15 +74,9 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
             <input id="password" name="password" type="password" class="text" size="22" />    
         </div>    
         <p class="containfloats" >
-          <a href="https://www.pinecovetest.com/reg/index.cfm?fa=intro.forgot_password"><em>Forgot Password?</em></a>
           <input type="submit" value="Login" class="btn btn-green btn-right" />
         </p>
         </form>
-        <hr />
-        <h3 class="accent2">New to Pine Cove?</h3>
-        <div class="buttonrow" style="margin-bottom: 6px;">
-            <a class="btn btn-green" href="https://www.pinecovetest.com/reg/index.cfm?fa=useraccount.create">Create Account</a>
-        </div>
     </div><!-- end sbf2-content -->
 </div><!-- end sbf2 -->
 
