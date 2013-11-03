@@ -1,0 +1,47 @@
+<html>
+<head>
+
+</head>
+
+<body>
+	<style type="text/css">
+<!--
+.reg-login-widget2 input[type="text"], .reg-login-widget2 input[type="password"] { float: right; width: 60%; }
+.rlw-inputrow { overflow: hidden; padding:2px 0; }
+.rlw-inputrow label { float: left; line-height: 2em; }
+.reg-login-widget2 input[type="image"] { vertical-align: middle; float: right; }
+p.rlw-note { line-height: 1.3em; font-style: italic; }
+.reg-login-widget2 h3 { margin-top: 10px; }
+-->
+</style>
+
+<!-- Reg Login Widget 2 -->
+<div class="sbf2 fancy graphic-title sbf2g-registration reg-login-widget2">
+    <div class="sbf2-content">
+        <h2 class="sbf-title">Registration</h2>
+        
+        <h3 class="accent2">Current Camper?</h3>
+        <form action="https://www.pinecovetest.com/reg/index.cfm?fa=login.validate_login" class="formstyle1" method="post">              
+        <div class="rlw-inputrow">
+          <label for="username">Username:</label>
+            <input id="username" name="username" class="text" type="text" size="22" />
+        </div>
+        <div class="rlw-inputrow">
+          <label for="password">Password:</label>
+            <input id="password" name="password" type="password" class="text" size="22" />    
+        </div>    
+        <p class="containfloats" >
+          <a href="https://www.pinecovetest.com/reg/index.cfm?fa=intro.forgot_password"><em>Forgot Password?</em></a>
+          <input type="submit" value="Login" class="btn btn-green btn-right" />
+        </p>
+        </form>
+        <hr />
+        <h3 class="accent2">New to Pine Cove?</h3>
+        <div class="buttonrow" style="margin-bottom: 6px;">
+            <a class="btn btn-green" href="https://www.pinecovetest.com/reg/index.cfm?fa=useraccount.create">Create Account</a>
+        </div>
+    </div><!-- end sbf2-content -->
+</div><!-- end sbf2 -->
+
+</body>
+</html>
