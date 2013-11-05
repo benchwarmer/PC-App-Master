@@ -41,8 +41,8 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 					}
 					,success: function(data) {
 						// bracelet exists and has an associated contact
-						alert(data.id);
-						if ( data.id != 0 || data.id != 'undefined') {
+						alert(data);
+						if ( data ) {
 							$('.reg-login-widget2').html("<h3>Login Success!</h3>");
 						}
 						else {
