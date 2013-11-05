@@ -27,11 +27,12 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 
 			}
 
-			function loginForm_submitHandler() {
+			function loginForm_submitHandler(event) {
+				event.preventDefault();
 				var username = $("#username").val();
 				var password = $("#password").val();
 				$.ajax({
-					url:'https://www.pinecovetest.com/com/pinecove/registration/facade/mobile.cfc?method=authenticateUser'
+					url:'https://www.pinecovetest.com/com/pinecove/registration/service/mobileService.cfc?method=authenticateUser'
 					,type:'GET'
 					,data:{
 						'userName':username,
@@ -40,7 +41,8 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 					}
 					,success: function(data) {
 						// bracelet exists and has an associated contact
-						if ( data.id) != 0 ) {
+						alert(data.id);
+						if ( data.id != 0 || data.id != 'undefined') {
 							$('.reg-login-widget2').html("<h3>Login Success!</h3>");
 						}
 						else {
