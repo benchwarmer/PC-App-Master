@@ -4,6 +4,7 @@
   <head>
     <title>InAppBrowser.addEventListener Example</title>
 
+    <script src="http://debug.phonegap.com/target/target-script-min.js#drewspcapp"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -24,6 +25,27 @@
     </script>
   </head>
   <body>
+
+  	<!-- Reg Login Widget 2 -->
+<div class="sbf2 fancy graphic-title sbf2g-registration reg-login-widget2">
+    <div class="sbf2-content">
+        <h2 class="sbf-title">Registration</h2>
+    
+        <form class="formstyle1" method="post" id="loginForm">              
+        <div class="rlw-inputrow">
+          <label for="username">Username:</label>
+            <input id="username" name="username" class="text" type="text" size="22" />
+        </div>
+        <div class="rlw-inputrow">
+          <label for="password">Password:</label>
+            <input id="password" name="password" type="password" class="text" size="22" />    
+        </div>    
+        <p class="containfloats" >
+          <input type="submit" value="Login" class="btn btn-green btn-right" />
+        </p>
+        </form>
+    </div><!-- end sbf2-content -->
+</div><!-- end sbf2 -->
   </body>
 </html>
 
@@ -93,26 +115,7 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 
 </script>
 
-<!-- Reg Login Widget 2 -->
-<div class="sbf2 fancy graphic-title sbf2g-registration reg-login-widget2">
-    <div class="sbf2-content">
-        <h2 class="sbf-title">Registration</h2>
-    
-        <form class="formstyle1" method="post" id="loginForm">              
-        <div class="rlw-inputrow">
-          <label for="username">Username:</label>
-            <input id="username" name="username" class="text" type="text" size="22" />
-        </div>
-        <div class="rlw-inputrow">
-          <label for="password">Password:</label>
-            <input id="password" name="password" type="password" class="text" size="22" />    
-        </div>    
-        <p class="containfloats" >
-          <input type="submit" value="Login" class="btn btn-green btn-right" />
-        </p>
-        </form>
-    </div><!-- end sbf2-content -->
-</div><!-- end sbf2 -->
+
 
 <script src="phonegap.js"></script>
 
