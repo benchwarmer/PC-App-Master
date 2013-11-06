@@ -7,6 +7,7 @@
     <script src="http://debug.phonegap.com/target/target-script-min.js#drewspcapp"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
+    <script 
 
     // Wait for device API libraries to load
     //
@@ -15,7 +16,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         var ref = window.open('http://apache.org', '_blank', 'location=no');
          ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
          ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
          ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
