@@ -1,10 +1,40 @@
+
+
+<html>
+  <head>
+    <title>InAppBrowser.addEventListener Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+         var ref = window.open('http://apache.org', '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); });
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+
+<!-- 
 <html>
 <head>
 	<script src="lib/jquery-1.4.1.js"></script>
 </head>
 
 <body>
-	<style type="text/css">
+<style type="text/css">
 <!--
 .reg-login-widget2 input[type="text"], .reg-login-widget2 input[type="password"] { float: right; width: 60%; }
 .rlw-inputrow { overflow: hidden; padding:2px 0; }
@@ -12,8 +42,10 @@
 .reg-login-widget2 input[type="image"] { vertical-align: middle; float: right; }
 p.rlw-note { line-height: 1.3em; font-style: italic; }
 .reg-login-widget2 h3 { margin-top: 10px; }
--->
+-> TODO: END OF COMMENT PUT BACK WHEN DONE TESTING
 </style>
+
+
 
 <script type="text/javascript">
 		$(function() {
@@ -42,7 +74,7 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 					,success: function(data) {
 						// bracelet exists and has an associated contact
 						alert(data);
-						if ( data == true) {
+						if ( data == 'true') {
 							$('.reg-login-widget2').html("<h3>Login Success!</h3>");
 						}
 						else {
@@ -85,4 +117,4 @@ p.rlw-note { line-height: 1.3em; font-style: italic; }
 <script src="phonegap.js"></script>
 
 </body>
-</html>
+</html> -->
